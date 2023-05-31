@@ -52,7 +52,7 @@ async function fetchResponse(url, request) {
 // Kan bruges til Get, Post, Put og Delete
 async function fetchAny(fetchUrl, fetchMethod, objectBody) {
     const fullURL = localHostURL + fetchUrl
-    const requestObject = createRequest(fetchMethod, objectBody) // Hvis du laver fetch med en GET, så er objectBody bare null
+    const requestObject = createRequest(fetchMethod, objectBody) // Hvis du laver fetch med en GET/DELETE, så er objectBody bare null
     const fetchedObject = await fetchResponse(fullURL, requestObject)
 
     if (fetchedObject instanceof Error) {
