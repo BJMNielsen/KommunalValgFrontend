@@ -60,3 +60,13 @@ async function fetchAny(fetchUrl, fetchMethod, objectBody) {
     }
     return fetchedObject;
 }
+
+// Denne metode laver et form element om til et javascript objekt vi kalder plainFormData.
+function preparePlainFormData(form) {
+    console.log("Received the Form:", form)
+    const formData = new FormData(form)  // indbygget metode, behøves ikke forstås.
+    console.log("Made the form in to FormData:", formData)
+    const plainFormData = Object.fromEntries(formData.entries())
+    console.log("Changes and returns the FormData as PlainFormData:", plainFormData)
+    return plainFormData
+}
